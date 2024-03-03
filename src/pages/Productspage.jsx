@@ -11,7 +11,7 @@ function Productspage() {
 
   useEffect(() => {
     dispatch(fetchProducts())
-  });
+  },[dispatch]);
   
   return (
     <div className=" w-[95%] h-[95%] bg-white p-[2%] overflow-scroll ">
