@@ -17,7 +17,7 @@ function Authentication() {
     e.preventDefault();
     document.getElementById("submit").value = "Loading...";
     try {
-      const url = "https://ecommerce-app-chi-beige.vercel.app/api/user/registration";
+      const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/registration";
       const sendData = {
         img: "fjsjflsajljflkasjflkasjfljasl",
         username: authvalues.username,
