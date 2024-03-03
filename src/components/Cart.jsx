@@ -1,20 +1,10 @@
 import {useSelector} from "react-redux";
 
 import Cartboxs from "./ComponentsItems/Cartboxs";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const { cartlist } = useSelector(state => state.cart);
-
-    const cartItems = [
-        { id: 1, name: "Product 1", price: 10, quantity: 2 },
-        { id: 2, name: "Product 2", price: 15, quantity: 1 },
-        { id: 2, name: "Product 2", price: 15, quantity: 1 },
-        { id: 2, name: "Product 2", price: 15, quantity: 1 },
-        { id: 2, name: "Product 2", price: 15, quantity: 1 },
-        { id: 2, name: "Product 2", price: 15, quantity: 1 },
-        { id: 2, name: "Product 2", price: 15, quantity: 1 },
-        // Add more dummy data as needed
-    ];
 
     const totalAmount = cartlist.reduce((total, item) => total + (item.price * item.quantity), 0);
 
@@ -43,7 +33,7 @@ const Cart = () => {
                 </div>
                 <div className="mt-4 flex justify-center">
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Proceed to Checkout
+                   <Link to="/comesoon"> Proceed to Checkout </Link>
                 </button>
             </div>
             </div>

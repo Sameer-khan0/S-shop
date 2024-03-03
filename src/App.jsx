@@ -13,6 +13,7 @@ import { useContext} from "react";
 import Alert from "./components/Alert";
 import Contexts from "./context/Context";
 import Configration from "./pages/Configrationpage"
+import Csoon from './pages/ComingsoonPage'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/wishlist" element={<Wishlistpage />} />
           <Route path="/products" element={<Productspage />} />
           <Route path="/product" element={<Productpage />} />
+          <Route path="/comesoon" element={<Csoon />} />
         </Routes>
       </Router>
       {alert.showalert && (

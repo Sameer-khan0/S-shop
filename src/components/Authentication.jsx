@@ -55,7 +55,7 @@ function Authentication() {
     e.preventDefault();
     document.getElementById("submit").value = "Loading...";
     try {
-      const url = "http://localhost:4023/api/user/login";
+      const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/login";
       const data = {
         email: authvalues.email,
         password: authvalues.password,
@@ -100,7 +100,7 @@ function Authentication() {
         stiffness: 260,
         damping: 20,
       }}
-      className="flex justify-center items-center w-[80%] shadow-xl p-1 md:w-[70%] h-[70%]"
+      className="flex justify-center items-center w-[90%] shadow-xl p-1 md:w-[70%] h-[80%]"
     >
       <div className="h-[100%] w-[50%] md:block hidden">
         <img src={img} alt="img" className="w-full h-full object-cover" />
@@ -139,7 +139,7 @@ function Authentication() {
                 disabled={!authvalues.email || !authvalues.password}
               />
               <p className="text-xm md:text-sm">
-                New account? <span onClick={handleAuthtype}>Sign up</span>
+                New account? <span onClick={handleAuthtype} className=" text-blue-400">Sign up</span>
               </p>
             </form>
           </>
@@ -190,7 +190,7 @@ function Authentication() {
               />
               <p className="text-xm md:text-sm">
                 Already have an account?{" "}
-                <span onClick={handleAuthtype}>Login</span>
+                <span onClick={handleAuthtype} className=" text-blue-400">Login</span>
               </p>
             </form>
           </>
