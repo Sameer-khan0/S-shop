@@ -1,4 +1,4 @@
-const HOST = "https://ecommerce-app-chi-beige.vercel.app";
+const HOST = "https://ecommerce-app-ashen-eight.vercel.app";
 const GET_PRODUCTS = "/api/product/products";
 const GET_CART= "/api/user/get/cart"
 const ADD_CART= "/api/user/add/cart"
