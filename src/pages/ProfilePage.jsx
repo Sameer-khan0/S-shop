@@ -36,7 +36,7 @@ const DeveloperContactPage = () => {
                 whileHover={{ scale: 1.1 }}
                 className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-contain shadow-lg"
                 src={Developer}
-                alt="Developer"
+                alt="image"
               />
             </div>
             <div className="flex flex-col justify-center items-center">

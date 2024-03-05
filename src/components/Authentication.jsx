@@ -24,7 +24,7 @@ function Authentication() {
         email: authvalues.email,
         password: authvalues.password,
       };
-
+      if(!authvalues) return showalert("Enter vaild inputs", false, false);
       const response = await axios.post(url, sendData);
       if (response.data.userData) {
         const userdata = response.data.userData;

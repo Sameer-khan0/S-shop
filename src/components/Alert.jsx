@@ -10,7 +10,7 @@ function Alert(props) {
 
   return (
     <motion.div
-      initial={{ x: 100 }}
+      initial={{ x: 20 }}
       animate={{ x: 0 }}
       transition={{
         duration: 0.5,
@@ -18,7 +18,7 @@ function Alert(props) {
         stiffness: 260,
         damping: 20
       }}
-      className="w-auto md:w-[25rem] shadow-2xl absolute right-[20px] bottom-12 md:bottom-[25px] backdrop-blur-sm"
+      className="w-[50%] opacity-90 md:w-[25rem] shadow-2xl absolute right-[20px] backdrop-blur-sm top-16 md:top-[90%]"
     >
       {show && (
         <div
@@ -26,7 +26,7 @@ function Alert(props) {
             borderBottom: `4px solid ${props.type ? "white" : "black"}`
           }}
           className={`text-white font-semibold ${
-            props.type ? "bg-blue-500" : "bg-red-500"
+            props.type ? "bg-blue-500" : "bg-yellow-500"
           } shadow-2xl z-[500] px-4 py-3 rounded relative`}
           role="alert"
         >

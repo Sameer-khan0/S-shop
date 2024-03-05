@@ -79,11 +79,11 @@ function Hompage() {
   },[dispatch])
 
   return (
-    <div className=" w-[95%] h-[95%] bg-white p-[2%] overflow-scroll " onClick={()=>console.log(wishlist)}> 
+    <div className=" w-[95%] h-[95%] bg-white p-[2%] overflow-scroll "> 
       <div id="header" className=" h-[10%]">
         <Navbar />
       </div>
-      <div className=" h-[90%]">
+      <div className=" h-[35%] md:h-[90%]">
         <Slider images={images} />
       </div>
       <div className="h-[100%]">
