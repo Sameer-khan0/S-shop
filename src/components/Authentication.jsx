@@ -55,8 +55,8 @@ function Authentication() {
     e.preventDefault();
     document.getElementById("submit").value = "Loading...";
     try {
-      const url = "http://localhost:4023/api/user/login";
-      // const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/login";
+      // const url = "http://localhost:4023/api/user/login";
+      const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/login";
       const data = {
         email: authvalues.email,
         password: authvalues.password,
