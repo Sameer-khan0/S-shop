@@ -27,6 +27,7 @@ const DeveloperContactPage = () => {
       document.getElementById("updateuser").innerHTML = "updating...";
       
       const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/profile/edit";
+      // const url = "http://localhost:4023/api/user/profile/edit";
       const formDataToSend = new FormData();
       formDataToSend.append("file", file); 
 
@@ -43,6 +44,7 @@ const DeveloperContactPage = () => {
         }
       } catch (error) {
         console.error(error);
+        showalert("Something went wrong", false, false);
       }
       finally{
         document.getElementById("updateuser").innerHTML = "update";
