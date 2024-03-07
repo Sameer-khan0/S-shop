@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import img from "../assets/design.jpg";
 import { motion } from "framer-motion";
@@ -12,19 +12,19 @@ function Authentication() {
   const [authtype, setauthtype] = useState(false);
   const { showalert } = context;
 
-
   const handleSignin = async (e) => {
     e.preventDefault();
     document.getElementById("submit").value = "Loading...";
     try {
-      const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/registration";
+      const url =
+        "https://ecommerce-app-ashen-eight.vercel.app/api/user/registration";
       const sendData = {
         img: "fjsjflsajljflkasjflkasjfljasl",
         username: authvalues.username,
         email: authvalues.email,
         password: authvalues.password,
       };
-      if(!authvalues) return showalert("Enter vaild inputs", false, false);
+      if (!authvalues) return showalert("Enter vaild inputs", false, false);
       const response = await axios.post(url, sendData);
       if (response.data.userData) {
         const userdata = response.data.userData;
@@ -78,7 +78,7 @@ function Authentication() {
       document.getElementById("email").value = "";
       document.getElementById("password").value = "";
       document.getElementById("username").value = "";
-      setauthvalues({}); 
+      setauthvalues({});
     }
   };
 
@@ -139,7 +139,10 @@ function Authentication() {
                 disabled={!authvalues.email || !authvalues.password}
               />
               <p className="text-xm md:text-sm">
-                New account? <span onClick={handleAuthtype} className=" text-blue-400">Sign up</span>
+                New account?{" "}
+                <span onClick={handleAuthtype} className=" text-blue-400">
+                  Sign up
+                </span>
               </p>
             </form>
           </>
@@ -190,7 +193,9 @@ function Authentication() {
               />
               <p className="text-xm md:text-sm">
                 Already have an account?{" "}
-                <span onClick={handleAuthtype} className=" text-blue-400">Login</span>
+                <span onClick={handleAuthtype} className=" text-blue-400">
+                  Login
+                </span>
               </p>
             </form>
           </>

@@ -9,5 +9,6 @@ const ADD_WISHLIST= "/api/user/add/wishlist"
 const EDIT_WISHLIST= "/api/user/edit/wishlist"
 const DELETE_WISHLIST= "/api/user/delete/wishlist"
 const GET_USER= "/api/user/profile"
+// const EDIT_USER= "/api/user/profile"
 
 export { HOST, GET_PRODUCTS, GET_CART, ADD_CART ,EDIT_CART,DELETE_CART,GET_WISHLIST,ADD_WISHLIST,EDIT_WISHLIST,DELETE_WISHLIST,GET_USER};
