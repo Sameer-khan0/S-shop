@@ -25,33 +25,33 @@ const DeveloperContactPage = () => {
   const handelUpdate = async () => {
     try {
       document.getElementById("updateuser").innerHTML = "updating...";
-      
-      const url = "https://ecommerce-app-ashen-eight.vercel.app/api/user/profile/edit";
+
+      const url =
+        "https://ecommerce-app-ashen-eight.vercel.app/api/user/profile/edit";
       // const url = "http://localhost:4023/api/user/profile/edit";
       const formDataToSend = new FormData();
-      formDataToSend.append("file", file); 
+      formDataToSend.append("file", file);
 
       const req = await axios.put(url, formDataToSend, {
         headers: {
-          token: localStorage.getItem('token'),
+          "Content-Type": "multipart/form-data",
+          token: localStorage.getItem("token"),
           // token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTcwZDkyYjE1ZmRkZjg3NTE0YTFmYSIsImlhdCI6MTcwOTgxNzk2Mn0.o4JhDKNUj4oyGR-4S-7eIgRe6QOZLyAsuxw-Fhr5JZs",
-         }
-        });
-        
-        if (req.data.status === "ok") {
-          showalert("Updated", true, true);
-        } else {
-          showalert("Something went wrong", false, false);
-        }
-      } catch (error) {
-        console.error(error);
+        },
+      });
+
+      if (req.data.status === "ok") {
+        showalert("Updated", true, true);
+      } else {
         showalert("Something went wrong", false, false);
       }
-      finally{
-        document.getElementById("updateuser").innerHTML = "update";
-      }
+    } catch (error) {
+      console.error(error);
+      showalert("Something went wrong", false, false);
+    } finally {
+      document.getElementById("updateuser").innerHTML = "update";
+    }
   };
-  
 
   useEffect(() => {
     dispatch(fetchUser());
@@ -81,7 +81,9 @@ const DeveloperContactPage = () => {
                 <motion.img
                   whileHover={{ scale: 1.1 }}
                   className="rounded-full object-cover w-full h-full"
-                  src={imageSelected ? imageSelected : (user.img ? user.img : Avatar)}
+                  src={
+                    imageSelected ? imageSelected : user.img ? user.img : Avatar
+                  }
                   alt="Profile"
                 />
                 <input
@@ -103,7 +105,7 @@ const DeveloperContactPage = () => {
                   <p className="text-gray-700">{user.email}</p>
                   {imageSelected && (
                     <button
-                    id="updateuser"
+                      id="updateuser"
                       onClick={handelUpdate}
                       className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
                     >
